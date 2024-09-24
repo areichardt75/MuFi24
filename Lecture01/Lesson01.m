@@ -1,13 +1,18 @@
 % Lesson #1 / 04/09/2024
+% What was written in MATLAB on the lecture
 2+3
 first
 3*4
 a = 3
 b = 4;
 c = a * b
+% Shows variables and what memory they take
 whos
 clear all
+% after clear all variables there should be nothing left in memory
 whos
+
+%% Let's create some matrices
 A = 1:3:19
 linspace(1,19,7)
 logspace(log10(1), log10(19),7)
