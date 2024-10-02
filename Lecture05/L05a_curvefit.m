@@ -1,27 +1,36 @@
-% Curve fit using least-square fit
+% Curve fit of measured data using least-square mean method
+% Curve fit using least-square fit - 
 
+% measured data 
 t = [1;2;3;4;4.5;5;6;6.5];
 y = [0;1;1.5;2;2.3;2;1.3;0];
-% Function we are looking for
-% cubic polynom
+
+% Function we are looking for is named F
+% cubic polynom function - as an anonym function
 F = @(x,xdata) x(1)*xdata.^3+x(2)*xdata.^2+x(3)*xdata+x(4);
+% initial parameter set for iteration
 x0 = [1 1 1 0];
 
+% call lsqcurvefit 
 [p,resnorm] = lsqcurvefit(F,x0,t,y)
 
 %% Fitted curve and measuring datas
-% Show 
+% Show measured data and fitted polynom
+% Calculate fitted polynom values
 x = 1:0.01:6.5;
 px = polyval(p,x);
 
+% Plot measured data (markers are measurement)
 figure; 
   plot(t,y,'ro','MarkerSize',12,'MarkerFaceColor','r');
-  hold on;
+  hold on; % hold plot to plot one more axis
+  % labels for x-axis and y-axis
   xlabel('t'); ylabel('x');
-
+  % plot fitted polynom
   plot(x,px,'k--');
 
 %% Higher order polynom approximation
+% Try a higher order polynom (4th order)
 F4 = @(p,x) polyval(p,x);
 x0 = [1 1 1 1 0];
 [p4,resnorm] = lsqcurvefit(F4,x0,t,y)
