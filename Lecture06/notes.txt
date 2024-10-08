@@ -1,0 +1,10 @@
+Notes and codes for Lecture 06 on the series MuFi24
+
+Ordinary Differential Equations - Linear equations 
+- numerical solutions to 1st order equation (radioactive decay)
+- system of first order equations (multiple output of decays)
+- simple harmonic oscillator (free and dumped)
+- mass-spring systems 
+
+- functions ode45, ode15s 
+- 
