@@ -17,3 +17,7 @@ plot(T,Y,'k-'); xlabel('time [years]'); ylabel('number of particles');
 % Find half-life time 
 id = find(Y<(N0/2));
 fprintf('half-life time : %8.3f years\n',T(id(1)));
+
+tin = linspace(T(33),T(34),100);
+yin = interp1(T,Y,tin);
+hold on; plot(tin,yin,'ko');
