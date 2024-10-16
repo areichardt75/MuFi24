@@ -1,0 +1,4 @@
+Notes and codes for Lecture 07.
+Lecture 07 - Other linear and nonlinear ODE problems
+- van der Pol equation
+- 
