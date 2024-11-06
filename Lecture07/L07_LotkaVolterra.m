@@ -14,19 +14,20 @@ q = 0.010;
 Tmax = 100;
 options = odeset('RelTol',1e-5);
 Tspan = [0 100];
-x0 = [50;12];
+x0 = [100;10];
 
 [T,Y] = ode45( @(t,x) LVm(t,x,a,b,p,q), Tspan, x0, options);
+% [T,Y] = ode78( @(t,x) LVm(t,x,a,b,p,q), Tspan, x0, options);
 
 prey = Y(:,1); % preys (rabbit) population
 pred = Y(:,2); % predators (fox) population
 
-%% 
-figure; 
-  plot(T, prey, 'r-', T, pred, 'k-', 'LineWidth',2);
-  xlabel('time'); 
-  ylabel('population');
-  legend('prey (rabbit)', 'predator (fox)', 'location', 'best');
+% %% 
+% figure; 
+%   plot(T, prey, 'r-', T, pred, 'k-', 'LineWidth',2);
+%   xlabel('time'); 
+%   ylabel('population');
+%   legend('prey (rabbit)', 'predator (fox)', 'location', 'best');
 
 %% Phase space 
 figure; 

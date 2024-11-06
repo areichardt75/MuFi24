@@ -10,13 +10,14 @@
 % y1' = y2
 % y2' = mu*(1-y1*y1)*y2-y1
 Tmax = 100;
-mu = 2; 
-x0 = [0;0.1];
+mu = 0.5; 
+x0 = [2;2.1];
 options = odeset('RelTol',1e-5);
 [T,Y] = ode45(@(t,x) vanderPol(t,x,mu),[0 Tmax],x0,options);
 
 y1 = Y(:,1); 
 y2 = Y(:,2);
+%%
 figure;
   subplot(211);
   plot(T,y2,'r-',T,y1,'b-');
@@ -27,6 +28,7 @@ figure;
   subplot(212);
   plot(y1,y2,'r-','LineWidth',2);
   xlabel('y1'); ylabel('y2=y1'' ');
+  axis equal;
 
  % figure;
   % plot(2*)

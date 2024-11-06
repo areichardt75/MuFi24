@@ -9,23 +9,27 @@
 % Try setting RelTol and AbsTol to get not so accurate solution.
 
 options = odeset('RelTol',1e-13, 'AbsTol',1e-12, 'Stats','on');
+% options = odeset('RelTol',1e-5,'Stats','on');
 Tspan = [0 5*2*pi];
 vy0 = 0.15;
 y0 = [2;0;0;vy0];
 % try vy0 = 0.5, 0.75, 0.02, ...
 
+% [T,Y] = ode45(@tbode, Tspan, y0, options);
+
 % [T,Y] = ode78(@tbode, Tspan, y0, options);
 [T,Y] = ode89(@tbode, Tspan, y0, options);
 
-%% Plot
-figure;
-  plot(T,Y(:,1),'k-',T,Y(:,3),'b-');
-  xlabel('time'); ylabel('coordinates');
+% %% Plot
+% figure;
+%   plot(T,Y(:,1),'k-',T,Y(:,3),'b-');
+%   xlabel('time'); ylabel('coordinates');
 
 %% Trajectory 
 figure;
   plot(Y(:,1), Y(:,3), 'r-o');
   xlabel('x'); ylabel('y');
+  axis equal;
 
 
 
