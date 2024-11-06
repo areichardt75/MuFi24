@@ -1,0 +1,7 @@
+Finite Difference Method solution to some Elliptic type PDE
+
+Steady-state heat convection
+Electrostatics basic problem
+
+Meshing and what are the consequences of it
+Discretization techniques 
