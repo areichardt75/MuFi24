@@ -1,0 +1,2 @@
+Codes and notes for this week's lecture
+  Finite Difference Solution to Parabolic PDE
