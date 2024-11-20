@@ -1,0 +1,2 @@
+Codes and notes for Lecture 10
+  FInite Difference solution to one-dimensional wave equation
